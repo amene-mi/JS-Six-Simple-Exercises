@@ -7,15 +7,14 @@ let repeatString = (string, count) => {
     for (let i = 0; i < count; i++) {
         result += string;
     }
-    output.innerText= result;
+    output.innerText = result;
 };
 
 function onBtn(form = formEI) {
-    debugger;
     try {
         if (form.elements[0].value && form.elements[1].value) {
-            if (isFinite(parseInt( form.elements[1].value))) {
-                repeatString(form.elements[0].value, parseInt( form.elements[1].value));
+            if (isFinite(parseInt(form.elements[1].value))) {
+                repeatString(form.elements[0].value, parseInt(form.elements[1].value));
             }
             else { throw 'please input a Number..!'; }
         }
@@ -23,7 +22,6 @@ function onBtn(form = formEI) {
     } catch (error) {
         alert(error);
     }
-
 }
 
 btn.addEventListener('click', () => onBtn());

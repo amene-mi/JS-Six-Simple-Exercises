@@ -15,7 +15,6 @@ let sum = (num1, num2) => {
 };
 
 function onBtn(form = formEI) {
-    debugger;
     try {
         if (form.elements[0].value && form.elements[1].value) {
             sum(parseInt(form.elements[0].value), parseInt(form.elements[1].value));
