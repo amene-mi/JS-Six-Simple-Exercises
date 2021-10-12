@@ -1,0 +1,82 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+h3 {
+  background-color: darkslateblue;
+  color: whitesmoke;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0.1rem;
+}
+.row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 0.2rem solid darkslateblue;
+  border-radius: 0.5rem;
+  width: 30%;
+  margin: 1rem;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 0.8rem;
+}
+
+input {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+form > button {
+  margin: 0.8rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: rgb(187, 182, 214);
+  border: 0.1rem solid darkslateblue;
+  border-radius: 0.5rem;
+}
+
+.result {
+  border: 0.1rem dashed darkslateblue;
+  border-radius: 0.5rem;
+  visibility: visible;
+  width: 80%;
+  height: 2rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+#output {
+  padding-top: 0.2rem;
+  margin: 0;
+}
+.output-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 0.1rem dashed darkslateblue;
+  border-radius: 0.5rem;
+  width: 33%;
+  margin: 1rem;
+}

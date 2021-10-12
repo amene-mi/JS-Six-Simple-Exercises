@@ -1,0 +1,15 @@
+{
+  "name": "js-six-simple-exercises",
+  "version": "1.0.0",
+  "description": "Karademy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "repeat-string"
+  ],
+  "author": "",
+  "license": "ISC"
+}
