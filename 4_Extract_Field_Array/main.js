@@ -13,7 +13,7 @@ const events = [
     }
 ]
 
-const extractFieldArray = (field,arr) => {
+const extractFieldArray = (field, arr) => {
     const results = [];
     for (var i = 0; i < arr.length; i++) {
         if (arr[i][field]) {
@@ -24,19 +24,18 @@ const extractFieldArray = (field,arr) => {
     return results;
 };
 
-function validation(element) {
+const validation = (element) => {
     try {
         if (element) {
-            extractFieldArray(element,events);
+            extractFieldArray(element, events);
         }
         else { throw 'Fields are required..!'; }
     } catch (error) {
         alert(error);
     }
-}
-function onBtn(form = formEI) {
-    validation(form.elements[0].value);
-}
+};
+
+const onBtn = (form = formEI) => validation(form.elements[0].value);
 
 btn.addEventListener('click', () => onBtn());
 

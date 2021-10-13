@@ -2,30 +2,31 @@ const btn = document.getElementById('show');
 const formEI = document.getElementById('form');
 const output = document.getElementById('output');
 
-let palindrome = ([...str]) => {
-    let result="Yes";
+const palindrome = ([...str]) => {
+    let result = "Yes";
     const arr = [...str];
-    let arr_reverse =[...str];
-    for (let i = 0; i < parseInt(arr.length/2); i++) {
-        if(arr[i]!==arr_reverse.reverse()[i]){
-         result = "No";
-         break;
+    let arr_reverse = [...str];
+    for (let i = 0; i < parseInt(arr.length / 2); i++) {
+        if (arr[i] !== arr_reverse.reverse()[i]) {
+            result = "No";
+            break;
         }
     }
     output.innerText = result;
 };
 
-function onBtn(form = formEI) {
-    debugger;
+const validation = (element) => {
     try {
-        if (form.elements[0].value) {
-            palindrome(form.elements[0].value.toLowerCase().replaceAll(' ','').split(""));
+        if (element) {
+            const rgex = new RegExp(',', 'g');
+            palindrome(element.toLowerCase().replaceAll(rgex, '').split(""));
         }
         else { throw 'Fields are required..!'; }
     } catch (error) {
         alert(error);
     }
-
 }
+
+const onBtn = (form = formEI) => validation(form.elements[0].value);
 
 btn.addEventListener('click', () => onBtn());

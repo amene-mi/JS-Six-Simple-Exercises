@@ -2,19 +2,20 @@ const btn = document.getElementById('show');
 const formEI = document.getElementById('form');
 const output = document.getElementById('output');
 
-let repeatString = (string, count) => {
-    let result = '';
-    for (let i = 0; i < count; i++) {
-        result += string;
-    }
-    output.innerText = result;
+const caesarCipher = ([...text], factor) => {
+    const arr = [...text];
+    let result = arr.map(function (item) {
+        return String.fromCharCode(item.charCodeAt(0) + factor);
+    });
+    const rgex = new RegExp(',', 'g');
+    output.innerText = result.toString().replace(rgex, '');
 };
 
-function onBtn(form = formEI) {
+const validation = (form) => {
     try {
         if (form.elements[0].value && form.elements[1].value) {
             if (isFinite(parseInt(form.elements[1].value))) {
-                repeatString(form.elements[0].value, parseInt(form.elements[1].value));
+                caesarCipher(form.elements[0].value.split(""), parseInt(form.elements[1].value));
             }
             else { throw 'please input a Number..!'; }
         }
@@ -22,6 +23,8 @@ function onBtn(form = formEI) {
     } catch (error) {
         alert(error);
     }
-}
+};
+
+const onBtn = (form = formEI) => validation(form);
 
 btn.addEventListener('click', () => onBtn());
