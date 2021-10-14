@@ -42,7 +42,7 @@ class Url {
     }
 }
 
-function test(url) {
+function getUrlParts(url) {
     const getURL = new Url(url);
     console.log(getURL.protocol());
     console.log(getURL.anchor());
@@ -52,8 +52,7 @@ function test(url) {
 const validation = (form) => {
     try {
         if (form.elements[0].value) {
-
-            test(form.elements[0].value);
+            getUrlParts(form.elements[0].value);
         }
         else { throw 'Fields are required..!'; }
     } catch (error) {
