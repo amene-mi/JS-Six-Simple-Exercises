@@ -6,30 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Question#6</title>
+ 
+    <title>Question#7</title>
 </head>
 
 <body>
     <main>
         <div class="col">
-            <h3>Encoding and decoding strings</h3>
+            <h3>Return detail URL</h3>
             <div class="question">
                 <form id="form">
-                    <label for="text">
-                        Text</br>
-                        <input id="text" type="text">
+                    <label for="URL">
+                        URL</br>
+                        <input id="URL" type="text">
                     </label>
-                    <label for="shift_factor">
-                        shift factor</br>
-                        <input id="shift_factor" type="text">
-                    </label>
-
-                    <input type="radio" id="encoded" name="Caesar" value="email" checked>
-                    <label for="encoded">Encoded</label>
-
-                    <input type="radio" id="decoded" name="Caesar" value="phone">
-                    <label for="decoded">Decoded</label>
-                    
                     <button id="show" type="button">
                         Show out put
                     </button>
@@ -41,6 +31,7 @@
         </div>
     </main>
     <script src='./main.js'></script>
+    <script src="../node_modules/get-url-parts"></script>
 </body>
 
 </html>

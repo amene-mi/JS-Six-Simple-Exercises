@@ -4,11 +4,13 @@ const output = document.getElementById('output');
 
 const caesarCipher = ([...text], factor) => {
     const arr = [...text];
-    let result = arr.map(function (item) {
-        return String.fromCharCode(item.charCodeAt(0) + factor);
+    let result = arr.map(function (char) {
+        const first_Alph_Ascii = char === char.toLowerCase() ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+        const char_order = (char.charCodeAt(0) - first_Alph_Ascii) + factor;
+        const change_char = char_order % 26 + first_Alph_Ascii;
+        return String.fromCharCode(change_char);
     });
-    const rgex = new RegExp(',', 'g');
-    output.innerText = result.toString().replace(rgex, '');
+    return result.join("");
 };
 
 const validation = (form) => {
